@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ecf2fa">
+  <title>Mapa wiedzy · Brain</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/map.css">
+  <script type="module" src="/map.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#graph-canvas">Przejdź do mapy</a>
+  <main id="mapa" class="scene">
+    <canvas id="graph-canvas" tabindex="0" role="img" aria-label="Przestrzenna mapa dokumentów. Przeciągnij, aby obrócić; kółkiem przybliż. Strzałki i klawisze plus lub minus działają z klawiatury."></canvas>
+    <div class="scene-wash" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Brain — mapa wiedzy"><span class="brand-mark" aria-hidden="true">✣</span><span><strong>brain</strong><small>MAPA TWOJEGO SYSTEMU</small></span></a>
+      <form id="search-form" class="search" role="search">
+        <label for="search-input" class="sr-only">Szukaj w dokumentach</label>
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="search-input" type="search" autocomplete="off" placeholder="Szukaj w wiedzy, projektach i decyzjach…">
+        <kbd>/</kbd>
+        <div id="search-results" class="search-results" hidden></div>
+      </form>
+      <nav class="top-actions" aria-label="Widoki i narzędzia">
+        <a class="button primary" href="/kokpit">Kokpit <span aria-hidden="true">↗</span></a>
+        <button id="inventory-toggle" class="button" type="button" aria-expanded="false" aria-controls="inventory">Zasoby</button>
+        <button id="rotate-toggle" class="button icon" type="button" aria-label="Wstrzymaj obrót mapy" aria-pressed="true">◌</button>
+        <button id="reset-view" class="button icon" type="button" aria-label="Przywróć widok mapy">◎</button>
+      </nav>
+    </header>
+
+    <section class="intro" aria-labelledby="map-title">
+      <p class="eyebrow"><span class="status-dot"></span> TWÓJ SYSTEM PRACY</p>
+      <h1 id="map-title">Wiedza w jednym<br><em>obrazie.</em></h1>
+      <p>Dokumenty i zapisane między nimi połączenia. Wybierz punkt, aby zajrzeć do źródła.</p>
+      <div class="stats" aria-label="Zawartość mapy">
+        <div><strong id="stat-documents">0</strong><span>DOKUMENTÓW</span></div>
+        <div><strong id="stat-areas">0</strong><span>OBSZARÓW</span></div>
+        <div><strong id="stat-links">0</strong><span>POŁĄCZEŃ</span></div>
+      </div>
+    </section>
+
+    <aside id="setup-panel" class="setup-panel" hidden>
+      <span class="eyebrow">PIERWSZY KROK</span>
+      <h2>Ta mapa zaczyna się od Ciebie.</h2>
+      <p>Otwórz folder w swoim narzędziu AI i poproś o przeprowadzenie pierwszej konfiguracji. Twoje dokumenty pojawią się tutaj po zapisaniu.</p>
+      <button id="open-start" class="button primary" type="button">Czytaj START.md ↗</button>
+    </aside>
+
+    <aside id="filters" class="filters" aria-labelledby="filters-title">
+      <div class="filter-head"><h2 id="filters-title">Obszary</h2><span id="filter-count">0</span></div>
+      <div id="filter-list" class="filter-list"></div>
+      <p id="coverage-warning" class="coverage-warning" hidden>Skan źródeł jest ograniczony. Mapa może być niepełna.</p>
+    </aside>
+
+    <aside id="inventory" class="drawer inventory" aria-labelledby="inventory-title" hidden>
+      <div class="drawer-head"><span class="eyebrow">ZASOBY</span><button id="inventory-close" type="button" aria-label="Zamknij zasoby">×</button></div>
+      <h2 id="inventory-title">Co zawiera mapa</h2>
+      <p id="inventory-lead"></p>
+      <div id="inventory-sections" class="inventory-sections"></div>
+      <p id="inventory-note" class="drawer-note"></p>
+    </aside>
+
+    <aside id="source-drawer" class="drawer source-drawer" aria-labelledby="source-title" hidden>
+      <div class="drawer-head"><span class="eyebrow">DOKUMENT ŹRÓDŁOWY</span><button id="source-close" type="button" aria-label="Zamknij dokument">×</button></div>
+      <span id="source-section" class="source-section"></span>
+      <h2 id="source-title"></h2>
+      <p id="source-path" class="source-path"></p>
+      <div id="source-content" class="source-content"></div>
+      <div id="source-links" class="source-links"></div>
+    </aside>
+
+    <footer class="scene-footer">
+      <span class="orbit-hint">Przeciągnij, aby obrócić <b>·</b> Przewiń, aby przybliżyć</span>
+      <div class="footer-actions">
+        <button id="replay" class="button" type="button">▷ Odtwórz mapę</button>
+        <button id="cinema-toggle" class="button" type="button" aria-pressed="false">Kino</button>
+        <span id="visible-status" role="status">Wczytuję źródła…</span>
+      </div>
+      <span class="honesty">Animacja połączeń, nie historia pracy</span>
+    </footer>
+    <div id="error-banner" class="error-banner" role="alert" hidden></div>
+  </main>
+</body>
+</html>

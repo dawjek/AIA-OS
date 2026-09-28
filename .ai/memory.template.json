@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "configured": false,
+  "max_context_bytes": 18000,
+  "max_checkpoint_bytes": 12000,
+  "sources": [
+    {"path": "05 Wiedza/Kontekst/wlasciciel.md", "required": true},
+    {"path": "05 Wiedza/Kontekst/priorytety.md", "required": true},
+    {"path": "05 Wiedza/Kontekst/mapa-pracy.md", "required": true},
+    {"path": "05 Wiedza/Kontekst/stan-rozmowy.md", "required": true},
+    {"path": "05 Wiedza/Kontekst/firma.md", "required": false},
+    {"path": "01 Zarząd/PORTFOLIO.md", "required": false},
+    {"path": "01 Zarząd/Decyzje/DZIENNIK.md", "required": false},
+    {"path": "05 Wiedza/Wiki/INDEKS.md", "required": false}
+  ],
+  "search_roots": [
+    "05 Wiedza/Kontekst",
+    "05 Wiedza/Wiki",
+    "01 Zarząd/Karty projektów",
+    "01 Zarząd/Decyzje",
+    "03 Nasza firma/Projekty własne"
+  ],
+  "checkpoint_path": "05 Wiedza/Kontekst/stan-rozmowy.md",
+  "output": "05 Wiedza/Kontekst/pakiet-startowy.md",
+  "manifest": ".ai/synchronizacja/pamiec/manifest.json"
+}

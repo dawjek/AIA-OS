@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eef3fa">
+  <title>Kokpit · Brain</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/kokpit.css">
+  <script type="module" src="/kokpit.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#cockpit-main">Przejdź do treści</a>
+  <aside class="sidebar">
+    <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">✣</span><span><strong>brain</strong><small>TWÓJ SYSTEM PRACY</small></span></a>
+    <span class="nav-label">PRZESTRZEŃ ROBOCZA</span>
+    <nav aria-label="Nawigacja kokpitu">
+      <a class="active" href="/kokpit">▦ <span>Kokpit</span></a>
+      <a href="/">◎ <span>Mapa wiedzy</span><b>↗</b></a>
+      <a href="#pamiec">◇ <span>Pamięć</span></a>
+      <a href="#projekty">▤ <span>Projekty</span></a>
+      <a href="#decyzje">✦ <span>Decyzje</span></a>
+      <a href="#zrodla">⌕ <span>Źródła</span></a>
+    </nav>
+    <div class="sidebar-bottom"><span class="sidebar-orb" aria-hidden="true"></span><strong>Jedno miejsce.<br>Pełniejszy obraz.</strong><p>Wiedza i stan pracy z Twoich plików.</p></div>
+  </aside>
+
+  <main id="cockpit-main">
+    <header class="pagebar"><span>PRZEGLĄD SYSTEMU <b>/</b> <span id="today"></span></span><div><span id="read-state" role="status">Odczytuję źródła…</span><button id="refresh" type="button" class="button quiet">↻ Odśwież</button></div></header>
+    <div id="error-banner" class="error-banner" role="alert" hidden></div>
+    <section class="hero">
+      <div><p class="eyebrow"><span></span> BRAIN / KOKPIT</p><h1 id="system-title">Twój system<br><em>w jednym miejscu.</em></h1><p>Cel, projekty, decyzje i pamięć. Każdy wpis prowadzi do dokumentu, w którym jest zapisany.</p></div>
+      <a class="map-teaser" href="/" aria-label="Otwórz przestrzenną mapę wiedzy"><span class="orb" aria-hidden="true"><i></i><i></i><i></i></span><strong>WEJDŹ DO MAPY <span>↗</span></strong></a>
+    </section>
+    <section id="setup-panel" class="setup-panel" hidden>
+      <div><span class="eyebrow">PIERWSZY KROK</span><h2>Zacznij od siebie.</h2><p>Otwórz ten folder w Codexie lub Claude Code i poproś o pierwszą konfigurację. Zapisany kontekst oraz projekty pojawią się tutaj.</p></div>
+      <button id="open-start" type="button" class="button primary">Czytaj START.md ↗</button>
+    </section>
+    <section class="metrics" aria-label="Liczby systemu">
+      <article><span>DOKUMENTY</span><strong id="document-count">0</strong><small id="document-detail">wybrane źródła</small></article>
+      <article><span>POŁĄCZENIA</span><strong id="link-count">0</strong><small>odsyłacze między dokumentami</small></article>
+      <article><span>PROJEKTY</span><strong id="project-count">0</strong><small>zarejestrowane źródła</small></article>
+      <article><span>OBSZARY</span><strong id="area-count">0</strong><small>z dokumentów na mapie</small></article>
+    </section>
+
+    <section id="pamiec" class="section memory-section">
+      <div class="section-title"><span class="section-num">01</span><div><h2>Pamięć i ciągłość</h2><p>Stan lokalnego pakietu z wybranych źródeł.</p></div></div>
+      <div class="memory-card"><div class="memory-orb" aria-hidden="true"></div><div><span>PAKIET STARTOWY</span><h3 id="memory-label">Odczytuję…</h3><p id="memory-detail"></p></div><span id="memory-state" class="state-pill"></span></div>
+    </section>
+
+    <div class="two-column">
+      <section id="nastepny-krok" class="section">
+        <div class="section-title"><span class="section-num">02</span><div><h2>Następny krok</h2><p>Zapisany w stanach projektów albo potrzebny do konfiguracji.</p></div></div>
+        <ol id="next-steps" class="steps"></ol>
+      </section>
+      <section id="obszary" class="section">
+        <div class="section-title"><span class="section-num">03</span><div><h2>Obszary pracy</h2><p>To, co wybierzesz do swojego systemu.</p></div></div>
+        <div id="areas-list" class="areas-list"></div>
+      </section>
+    </div>
+
+    <section id="projekty" class="section">
+      <div class="section-title"><span class="section-num">04</span><div><h2>Projekty</h2><p>Każdy prowadzi do źródła stanu i następnego kroku.</p></div></div>
+      <div id="projects-list" class="projects-list"></div>
+    </section>
+    <section id="decyzje" class="section">
+      <div class="section-title"><span class="section-num">05</span><div><h2>Decyzje</h2><p>Wpisy z datą z dziennika decyzji.</p></div></div>
+      <div id="decisions-list" class="decisions-list"></div>
+    </section>
+    <section id="zrodla" class="section">
+      <div class="section-title"><span class="section-num">06</span><div><h2>Źródła</h2><p>Przeszukaj pliki wybrane do Braina.</p></div></div>
+      <form id="search-form" class="source-search" role="search"><label for="search-input">Szukaj w dokumentach</label><div><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Wpisz temat lub projekt…" autocomplete="off"><kbd>/</kbd></div></form>
+      <p id="search-summary" class="search-summary" role="status"></p>
+      <div id="documents-list" class="documents-list"></div>
+    </section>
+    <footer class="page-footer"><span>BRAIN / ŹRÓDŁA PRZED DEKLARACJĄ</span><span>Dane pozostają w tym folderze.</span></footer>
+  </main>
+
+  <dialog id="document-dialog" aria-labelledby="document-title">
+    <div class="dialog-head"><span>DOKUMENT ŹRÓDŁOWY</span><button id="close-dialog" type="button" aria-label="Zamknij dokument">×</button></div>
+    <h2 id="document-title"></h2><p id="document-path"></p>
+    <div id="document-content"></div><div id="document-links"></div>
+    <a id="map-return" class="button primary map-return" href="/">Pokaż powiązania na mapie ↗</a>
+  </dialog>
+</body>
+</html>

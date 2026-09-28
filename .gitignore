@@ -1,0 +1,85 @@
+# Prywatne pliki utworzone z publicznych szablonów
+/polaczenia.md
+/01 Zarząd/PORTFOLIO.md
+/01 Zarząd/Decyzje/DZIENNIK.md
+/01 Zarząd/Autodiagnoza pracy AI/REJESTR.md
+/05 Wiedza/Kontekst/wlasciciel.md
+/05 Wiedza/Kontekst/firma.md
+/05 Wiedza/Kontekst/priorytety.md
+/05 Wiedza/Kontekst/mapa-pracy.md
+/05 Wiedza/Kontekst/stan-rozmowy.md
+/05 Wiedza/Kontekst/pakiet-startowy.md
+/05 Wiedza/Wiki/INDEKS.md
+/05 Wiedza/Wiki/DZIENNIK.md
+/05 Wiedza/Wiki/wnioski/INDEKS.md
+/03 Nasza firma/Brain/brain.config.json
+/.ai/memory.json
+/.ai/memory-projects.json
+/.ai/onboarding.local.md
+/.ai/synchronizacja/
+/.codex/hooks.json
+/.claude/settings.json
+
+# Własne projekty, notatki i dokumenty dodane po konfiguracji
+/01 Zarząd/Karty projektów/*
+!/01 Zarząd/Karty projektów/README.md
+/01 Zarząd/Decyzje/*
+!/01 Zarząd/Decyzje/DZIENNIK.template.md
+/01 Zarząd/Rutyny/*
+!/01 Zarząd/Rutyny/README.md
+/01 Zarząd/Autodiagnoza pracy AI/*
+!/01 Zarząd/Autodiagnoza pracy AI/README.md
+!/01 Zarząd/Autodiagnoza pracy AI/REJESTR.template.md
+!/01 Zarząd/Autodiagnoza pracy AI/kolejka/
+/01 Zarząd/Autodiagnoza pracy AI/kolejka/*
+!/01 Zarząd/Autodiagnoza pracy AI/kolejka/README.md
+/02 Klienci/*
+!/02 Klienci/README.md
+/03 Nasza firma/Marketing/*
+!/03 Nasza firma/Marketing/README.md
+/03 Nasza firma/Sprzedaż i CRM/*
+!/03 Nasza firma/Sprzedaż i CRM/README.md
+/03 Nasza firma/Finanse/*
+!/03 Nasza firma/Finanse/README.md
+/03 Nasza firma/Umowy/*
+!/03 Nasza firma/Umowy/README.md
+/03 Nasza firma/Projekty własne/*
+!/03 Nasza firma/Projekty własne/README.md
+/04 Warsztat/Metody/*
+!/04 Warsztat/Metody/README.md
+/05 Wiedza/Kontekst/*
+!/05 Wiedza/Kontekst/README.md
+!/05 Wiedza/Kontekst/*.template.md
+/05 Wiedza/Wiki/*
+!/05 Wiedza/Wiki/README.md
+!/05 Wiedza/Wiki/INDEKS.template.md
+!/05 Wiedza/Wiki/DZIENNIK.template.md
+!/05 Wiedza/Wiki/wnioski/
+/05 Wiedza/Wiki/wnioski/*
+!/05 Wiedza/Wiki/wnioski/README.md
+!/05 Wiedza/Wiki/wnioski/INDEKS.template.md
+
+# Materiały i wyniki lokalnej pracy
+/90 Zaplecze techniczne/materialy/*
+!/90 Zaplecze techniczne/materialy/README.md
+/90 Zaplecze techniczne/plany/*
+!/90 Zaplecze techniczne/plany/README.md
+/90 Zaplecze techniczne/audyty/*
+!/90 Zaplecze techniczne/audyty/README.md
+/90 Zaplecze techniczne/retencja/*
+!/90 Zaplecze techniczne/retencja/README.md
+/output/*
+!/output/README.md
+/outputs/*
+!/outputs/README.md
+/qa/*
+!/qa/README.md
+
+# Wyniki narzędzi
+__pycache__/
+*.py[cod]
+node_modules/
+.DS_Store
+.env
+.env.*
+!.env.example
